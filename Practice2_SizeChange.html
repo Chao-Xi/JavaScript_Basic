@@ -1,0 +1,36 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>PopTio</title>
+   <style type="text/css">
+   	#div1 {width:200px; height:200px; background:#ff0000; border:1px solid #999; display:block; }
+   </style>
+  <script type="text/javascript">
+  	function Change()
+	{
+		var oDiv=document.getElementById("div1");
+		oDiv.style.width="100px";
+		oDiv.style.height="100px";
+		oDiv.style.background="green";
+	}
+	
+	function Restore()
+	{
+		var oDiv=document.getElementById("div1");
+		oDiv.style.width="200px";
+		oDiv.style.height="200px";
+		oDiv.style.background="#ff0000";
+	}
+  
+  </script>
+  </head>
+  <body>
+  <div id="div1" onmouseover="Change();" onmouseout="Restore();"></div>
+ </body>
+</html>

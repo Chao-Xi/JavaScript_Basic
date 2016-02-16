@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<style>
+#div1 {width:200px; height:150px; border:1px solid black;}
+</style>
+<script>
+window.onload=function ()
+{
+	var otxt=document.getElementById('text1');
+	var obtn=document.getElementById('btn1');
+	var odiv=document.getElementById('div1');
+	
+	obtn.onclick=function ()
+	{
+		odiv.innerHTML=otxt.value;
+		}
+	
+};
+</script>
+</head>
+
+<body>
+<input id="text1" type="text"/>
+<input id="btn1" type="button"  value="set"/>
+<div id="div1">
+</div>
+</body>
+</html>

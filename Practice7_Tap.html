@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Option CARD</title>
+
+<style>
+#div1 .active{background:yellow;}
+#div1 div{width:200px; height:200px; background:#ccc; border:1px solid #999; display:none;}
+</style>
+<script>
+window.onload=function ()
+{
+ var oDiv=document.getElementById('div1');
+ var aBtn=oDiv.getElementsByTagName('input');
+ var aDiv=oDiv.getElementsByTagName('div');
+
+for(var i=0; i<aBtn.length; i++)
+{
+	aBtn[i].index=i;
+	//index自定义属性标签
+	aBtn[i].onclick=function ()
+	{
+		for(var i=0;i<aBtn.length;i++)
+		{
+		aBtn[i].className='';
+		aDiv[i].style.display='none';
+		}
+	this.className='active';
+	aDiv[this.index].style.display='block';
+	};
+	}
+};
+
+</script>
+</head>
+<body>
+<div id="div1">
+<input class="active" type="button" value="Education"/>
+<input type="button" value="Sports"/>
+<input  type="button" value="Finance"/>
+<input type="button" value="Recrusition"/>
+<div style="display:block;">111</div>
+<div>222</div>
+<div>333</div>
+<div>444</div>
+</div>
+</body>
+</html>

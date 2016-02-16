@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script>
+window.onload=function ()
+{   var oBtn1=document.getElementById('btn1');
+    var oBtn2=document.getElementById('btn2');
+	var oBtn3=document.getElementById('btn3');
+	var oDiv1=document.getElementById('div1');
+	var ache=oDiv1.getElementsByTagName('input');
+	oBtn1.onclick=function ()
+	{  for(var i=0; i<=ache.length;i++)
+		ache[i].checked=true;
+		}
+		
+	oBtn2.onclick=function ()
+	{  for(var i=0; i<=ache.length;i++)
+		ache[i].checked=false;
+		}
+		
+	oBtn3.onclick=function ()
+	{  for(var i=0; i<=ache.length;i++)
+		if(ache[i].checked==true)
+		{
+			ache[i].checked=false;
+		}else
+		{
+			ache[i].checked=true;
+		}			
+	}
+}
+</script>
+</head>
+
+<body>
+<input  id="btn1" type="button" value="All Pick"/>
+<input  id="btn2" type="button" value="None Pick"/>
+<input  id="btn3" type="button" value="Reverse Pick"/>
+<br/>
+<div id="div1">
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+<input  type="checkbox"/><br/> 
+</div>
+</body>
+</html>
