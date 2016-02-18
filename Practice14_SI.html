@@ -1,0 +1,34 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>SetInterval</title>
+   <script type="text/javascript">
+   window.onload=function() {
+   	var oBtn1=document.getElementById('btn1');
+	var oBtn2=document.getElementById('btn2');
+	var timer=null;
+	oBtn1.onclick=function()
+	{
+		timer=setInterval(function(){
+			alert("I will find you, I will hunt you and I will kill you!");
+		},5000);
+	};
+	
+	oBtn2.onclick=function()
+	{
+		clearInterval(timer);
+	};
+	}
+   </script>
+ </head>
+ <body>
+  <input type="button" id="btn1" value="begin"/>
+  <input type="button" id="btn2" value="terminate"/>
+ </body>
+</html>

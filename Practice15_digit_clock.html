@@ -1,0 +1,52 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>digit_clock</title>
+   <script type="text/javascript">
+   	function toDouble(n)
+	{
+		if(n<10)
+		{
+			return '0'+n;
+		}
+		else
+		{
+			return ''+n;
+		}
+	};
+	
+   window.onload=function ()
+   {
+   	var aImg=document.getElementsByTagName('img');
+	function tick()
+	{
+	var oDate=new Date();
+	var str=toDouble(oDate.getHours())+toDouble(oDate.getMinutes())+toDouble(oDate.getSeconds());
+	//alert(str);
+	for(var i=0; i<aImg.length;i++)
+	{
+		aImg[i].src='images/'+str[i]+'.png';
+	}
+	}
+	setInterval(tick,1000);
+	tick();
+   }
+   </script>
+ </head>
+ <body style="background:white color:black; font-size:100px;">
+ <img src="images/0.png" />
+  <img src="images/0.png" />
+  :
+   <img src="images/0.png" />
+    <img src="images/0.png" />
+	:
+   <img src="images/0.png" /> 
+	<img src="images/0.png" />
+ </body>
+</html>
