@@ -1,0 +1,58 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>GetByClass</title>
+   <style type="text/css">
+   
+   </style>
+   <script type="text/javascript">
+   function getByClass(oParent,sClass)
+   {
+   	var res=[];
+	var aEle=oParent.getElementsByTagName('*');
+	for(var i=0;i<aEle.length;i++)
+	{
+		if(aEle[i].className==sClass)
+		{
+			res.push(aEle[i]);
+		}
+	}
+	     return res;
+   }
+   
+  window.onload=function ()
+  {
+  	var oUl=document.getElementById('ul1');
+	var oBox=getByClass(oUl,'box');
+	for(var i=0;i<oBox.length;i++)
+	{
+		oBox[i].style.background="red";
+	}
+  } 
+   </script>
+ </head>
+ <body>
+  <ul id="ul1">
+  <li></li>
+  <li class="box"></li>
+  <li></li>
+  <li></li>
+   <li class="box"></li>
+  <li></li>
+  <li></li>
+   <li class="box"></li>
+   <li class="box"></li>
+  <li></li>
+   <li class="box"></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+ </body>
+</html>
