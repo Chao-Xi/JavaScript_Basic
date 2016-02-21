@@ -1,0 +1,54 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>Table</title>
+   <style type="text/css">
+  
+   </style>
+   <script type="text/javascript">
+   window.onload=function ()
+   {
+   	var oTab=document.getElementById('tbl1');
+	var org_color='';
+	for(var i=0;i<oTab.tBodies[0].rows.length;i++)
+	{   
+        oTab.tBodies[0].rows[i].onmouseover=function ()
+		{   org_color=this.style.background;
+			this.style.background="pink";
+		}
+		 oTab.tBodies[0].rows[i].onmouseout=function ()
+		{
+			this.style.background=org_color;
+		}
+		if(i%2)
+		{
+			oTab.tBodies[0].rows[i].style.background="#ccc"
+		}
+		else{
+			 oTab.tBodies[0].rows[i].style.background=""
+		}
+		
+	}
+	
+   }
+   </script>
+ </head>
+ <body>
+  <table id="tbl1" border=1 width="500">
+  <thead><th>ID</th><th>Name</th><th>Title</th></thead>
+  <tbody>
+  <tr><td>1</td><td>Clark</td><td>SuperMan</td></tr>	
+  <tr><td>2</td><td>Bruce</td><td>BatMan</td></tr>
+  <tr><td>3</td><td>Diana</td><td>WonderWoman</td></tr>
+  <tr><td>4</td><td>Hal</td><td>Green Latern</td></tr>
+  <tr><td>5</td><td>Barry</td><td>Flash</td></tr>
+  </tbody>
+  </table>
+ </body>
+</html>
