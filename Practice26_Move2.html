@@ -1,0 +1,57 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>PopTio</title>
+   <style type="text/css">
+   	#div1 {width:150px; height:200px; background:GREEN; position:absolute; left:-150px; }
+	#div1 SPAN {width:20px; height:60px; background:pink; line-height:20px; position:absolute; top=70px; right:-20px; }
+   </style>
+   <script type="text/javascript">
+    window.onload=function()
+	{
+		var oDiv=document.getElementById('div1');
+		oDiv.onmouseover=function()
+		{
+			startmove(0);
+		};
+		oDiv.onmouseout=function()
+		{
+			startmove(-150);
+		};
+		
+	}
+	var timer=null;
+	
+	function startmove(Itarget)
+	{    
+	     var oDiv=document.getElementById('div1');
+	     clearInterval(timer);
+		timer=setInterval(function(){
+		var speed=0;
+		if(oDiv.offsetLeft>Itarget)
+		{
+			speed=-10;
+		}else
+		{
+			speed=10;
+		}
+		if (oDiv.offsetLeft == Itarget) {
+			clearInterval(timer);
+		}
+		else {
+			oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+		}
+		},30)
+	};
+   </script>
+ </head>
+ <body>
+  <div id="div1"><span>S H A</span></div>
+ </body>
+</html>
