@@ -1,0 +1,43 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>PopTio</title>
+   <style type="text/css">
+   	#div1 {width:200px; height:200px; background:pink; border:1px solid purple; position:absolute; top:50px; left:0px;}
+	#div2 {width:1px; height:500px; background:black;  position:absolute; top:0px; left:1300px;}
+   </style>
+   <script type="text/javascript">
+
+   	var timer=null;
+
+   function startmove()
+   {
+   	 var oDiv=document.getElementById('div1');
+	 clearInterval(timer);
+	 timer=setInterval(function(){
+	 	var speed=(1300-oDiv.offsetLeft)/20;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(oDiv.offsetLeft>=1300)
+		{
+		    clearInterval(timers);	
+		}else
+		{
+			oDiv.style.left=oDiv.offsetLeft+speed+'px';
+		}
+	 },30)
+	 
+   }
+   </script>
+ </head>
+ <body>
+ <input id="btn1" type="button" value="startmove" onclick="startmove()"/>
+ <div id="div1"/></div>
+ <div id="div2"/></div>
+ </body>
+</html>
