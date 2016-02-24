@@ -1,0 +1,95 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>Scroll Right</title>
+   <style type="text/css">
+   	div {width:200px; height:200px; background:yellow; border:5px solid black; margin:20px; float:left; font-size:14px;}
+	
+   </style>
+   <script type="text/javascript">
+   	window.onload=function()
+	{
+		var oDiv1=document.getElementById('div1');
+		var oDiv2=document.getElementById('div2');
+		var oDiv3=document.getElementById('div3');
+		var oDiv4=document.getElementById('div4');
+		oDiv1.onmouseover=function()
+		{
+			startmove(this,'height',400);
+        }; 
+		oDiv1.onmouseout=function()
+		{
+			startmove(this,'height',200);
+        }; 
+		
+		oDiv2.onmouseover=function()
+		{
+			startmove(this,'width',400);
+        }; 
+		oDiv2.onmouseout=function()
+		{
+			startmove(this,'width',200);
+        }; 
+		
+		oDiv3.onmouseover=function()
+		{
+			startmove(this,'fontSize',50);
+        }; 
+		oDiv3.onmouseout=function()
+		{
+			startmove(this,'fontSize',14);
+        }; 
+		oDiv4.onmouseover=function()
+		{
+			startmove(this,'borderWidth',30);
+        }; 
+		oDiv4.onmouseout=function()
+		{
+			startmove(this,'borderWidth',5);
+        }; 
+	};
+	
+		//var timer=null;
+   function getStyle(obj,name)
+   {
+   	if(obj.currentStyle)
+	{
+	   return obj.currentStyle[name];	
+	}else
+	{
+		return getComputedStyle(obj,false)[name];
+	}
+   }
+   function startmove(obj,attr,iTarget)
+   {
+	   clearInterval(obj.timer);
+	 
+	   obj.timer=setInterval(function(){
+	 	var cur=parseInt(getStyle(obj,attr));
+	 	var speed=(iTarget-cur)/5;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(cur==iTarget)
+		{
+		    clearInterval(obj.timer);	
+		}else
+		{
+			obj.style[attr]=cur+speed+'px';
+		}
+	 },30)
+	 
+   }
+   </script>
+ </head>
+ <body>
+  <div id='div1'>1.Higher</div>
+  <div id='div2'>2.wider</div>
+  <div id='div3'>3.biger</div>
+  <div id='div4'>4.border</div>
+ </body>
+</html>
