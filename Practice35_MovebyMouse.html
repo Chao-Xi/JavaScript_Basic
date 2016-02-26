@@ -1,0 +1,39 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>PopTio</title>
+   <style type="text/css">
+   	#div1 {width:200px; height:200px; background:pink; border:3px solid black; position:absolute;}
+   </style>
+   <script type="text/javascript">
+   
+	function getPos(ev)
+	{
+	 var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;	
+	 var scrollLeft=document.documentElement.scrollLeft||document.body.scrollLeft;	
+	 return {x:ev.clientX+scrollLeft, y:ev.clientY+scrollTop};
+	};
+	
+   	document.onmousemove=function (ev)
+	{   
+	    
+	    var oEvent=ev||event;
+		var oDiv=document.getElementById('div1');
+		var pos=getPos(oEvent);
+		oDiv.style.left=pos.x+'px';
+		oDiv.style.top=pos.y+'px';
+		
+	};
+	
+   </script>
+ </head>
+ <body style="height:2000px">
+  <div id="div1">For Your Information Secruity</div>
+ </body>
+</html>
