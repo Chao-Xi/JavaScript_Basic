@@ -1,0 +1,35 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>PopTio</title>
+   <style type="text/css">
+   	* {margin:0; padding:0; list-style:none;}
+   	#div1 {width:70px; height:100px; background:gray; border:1px solid purple; display:none; position:absolute; }
+   </style>
+   <script type="text/javascript">
+   	document.oncontextmenu=function (ev)
+	{
+	  oEvent=ev||event;
+	  var oDiv=document.getElementById('div1');
+	  oDiv.style.display="block";
+	  oDiv.style.left=oEvent.clientX+'px';
+	   oDiv.style.top=oEvent.clientY+'px';
+	  return false;	
+	}
+   </script>
+ </head>
+ <body>
+ <div id="div1">
+ 	<ul>1111</ul>
+	<ul>2222</ul>
+	<ul>3333</ul>
+	<ul>4444</ul>	
+ </div>
+ </body>
+</html>
