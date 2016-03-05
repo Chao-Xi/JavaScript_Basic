@@ -1,0 +1,39 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>PopTio</title>
+   <style type="text/css">
+   
+   </style>
+   <script type="text/javascript">
+   //var re=new RegExp('c','i');//JS style
+                              //i ignore lower case or upper case
+   //var re=/c/i;//peri style
+   var re=/\d/; //digit
+   var re1=/\d/g; //digit g->globle all digits
+   var re2=/\d+/g; //+ several digit
+   var re3=/\d+|a/g; //| or
+   var re4=/[ab]pc/g;
+   var str='ab3Cdef';
+   var str1='ab3 456 fr 567 34 agtg3';
+   var str2="abpc abac fpc dfpc dfpc apc";
+   
+   alert(str.search(re));
+   alert(str1.match(re1));
+   alert(str1.match(re2));
+   alert(str1.replace(re2,'_'));
+   alert(str1.replace(re3,'*'));
+   
+   alert(str2.match(re4));
+   </script>
+ </head>
+ <body>
+ 
+ </body>
+</html>

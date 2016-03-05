@@ -1,0 +1,56 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="Author" content="">
+  <meta name="Keywords" content="Neil Xi">
+  <meta name="Description" content="">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>PopTio</title>
+   <style type="text/css">
+   
+   </style>
+   <script type="text/javascript">
+  // \w char digit [a-z0-9_]
+  // \s space
+  // \d digit
+  // \D    [^0-9]
+  // \W   [^a-z0-9_]
+  // \W   NONE SPACE
+  //  .   ALL
+  //  {n}  appear n times
+  //  \d{8} 8 digit like phone number
+  //   10 digit phone number [1-9]\d{9}
+  //  {n}  appear at least n times and less than m times
+  //  {n,}  appear at least n times, no headline as limit
+  //   + {1,}
+  //   ? {0,1}
+  //   * {0,}
+  //  (2\d{2}-)?[1-9]\d{8}  
+  //  ^ header
+  //  $ tailer
+  window.onload=function ()
+  {
+  	var oTxt=document.getElementById('txt1');
+	var oBtn=document.getElementById('btn1');
+	oBtn.onclick=function()
+	{
+		var re=/^\w+@[a-z0-9]+\.[a-z]+$/i;
+		if(re.test(oTxt.value))
+		{
+			alert('correct!!!');
+		}else
+		{
+			alert('Wrong!!!');
+		};
+	};
+	
+  }
+   </script>
+ </head>
+ <body>
+ <input type="button" value="verify" id="btn1"/>
+ <input type="text" id="txt1"/>
+ </body>
+ </html>
